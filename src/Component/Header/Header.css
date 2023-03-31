@@ -1,9 +1,12 @@
 .header {
   height: 80px;
-  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background: blueviolet;
+
+  padding: 0 5%;
+}
+.hr {
+  color: aqua;
 }

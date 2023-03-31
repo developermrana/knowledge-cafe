@@ -1,0 +1,27 @@
+.single-card-container {
+  margin-bottom: 30px;
+  line-height: 30px;
+}
+
+.single-card-container img {
+  width: 100%;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-info {
+  padding: 5px 15px;
+}
+.user {
+  display: flex;
+  gap: 20px;
+}
+.single-card-container h2 {
+  padding: 8px 0;
+}
+
+hr {
+  margin-top: 10px;
+}
