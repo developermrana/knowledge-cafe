@@ -16,20 +16,36 @@
   top: 0;
   height: 100vh;
   overflow: auto;
+  padding: 30px 15px;
 }
 
 .add-time {
-  padding: 10px 10px;
-  margin: 10px 10px 20px;
   background: #fff;
+  padding: 10px;
 }
-.add-card {
-  padding: 10px 10px;
-  margin: 10px 10px 20px;
-}
+
 .add-card h2 {
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
   background: #fff;
+}
+
+.bookmark h2 {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  .card-container {
+    display: block;
+    gap: 20px;
+  }
+  .card-aside {
+    position: static;
+    height: auto;
+    padding: 10px;
+  }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import header_img from "../../assets/images/user_4.png";
 
 const Header = () => {
   return (
@@ -9,7 +10,7 @@ const Header = () => {
           <h1>Job Instruction</h1>
         </div>
         <div>
-          <img src="../../assets/images/user_4.png" alt="header img" />
+          <img src={header_img} alt="header img" />
         </div>
       </div>
       <div>

@@ -6,12 +6,14 @@ const Cards = () => {
   const [datas, setDatas] = useState([]);
   const [cardData, setCardData] = useState([]);
   const [times, setTimes] = useState(0);
+
   useEffect(() => {
     fetch("Fakedata.json")
       .then((res) => res.json())
       .then((data) => setDatas(data));
   }, []);
 
+  // add time event handler start
   const addTime = (time) => {
     let totalTime = 0;
     const localStor = localStorage.getItem("cardTime");
@@ -24,21 +26,29 @@ const Cards = () => {
     localStorage.setItem("cardTime", JSON.stringify(totalTime));
     setTimes(totalTime);
   };
+  // add time event handler end
 
-  const addTitle = (cardTitle) => {
+  const addTitle = (cardTitle, id) => {
     let shoppingCard;
 
     const localStor = localStorage.getItem("cardTitle");
 
     if (localStor) {
       let parseStor = JSON.parse(localStor);
-      shoppingCard = [...parseStor, cardTitle];
+      const filterTitle = parseStor.find((title) => title === cardTitle);
+
+      if (filterTitle) {
+        return alert("bari ja va");
+      } else {
+        shoppingCard = [...parseStor, cardTitle];
+        localStorage.setItem("cardTitle", JSON.stringify(shoppingCard));
+        setCardData(shoppingCard);
+      }
     } else {
       shoppingCard = [cardTitle];
+      localStorage.setItem("cardTitle", JSON.stringify(shoppingCard));
+      setCardData(shoppingCard);
     }
-
-    localStorage.setItem("cardTitle", JSON.stringify(shoppingCard));
-    setCardData(shoppingCard);
   };
 
   return (
@@ -59,7 +69,9 @@ const Cards = () => {
             Spent time on read: <span>{times}</span> min
           </h3>
         </div>
-        <h2>Bookmark items: {cardData.length}</h2>
+        <div className="bookmark">
+          <h2>Bookmark items: {cardData.length}</h2>
+        </div>
         <div className="add-card">
           {cardData.map((cardTitle) => (
             <h2>{cardTitle}</h2>
