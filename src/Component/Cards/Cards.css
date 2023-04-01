@@ -11,5 +11,25 @@
 
 .card-aside {
   flex-basis: 30%;
-  background-color: aquamarine;
+  background-color: #e2e2e2cc;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+.add-time {
+  padding: 10px 10px;
+  margin: 10px 10px 20px;
+  background: #fff;
+}
+.add-card {
+  padding: 10px 10px;
+  margin: 10px 10px 20px;
+}
+.add-card h2 {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background: #fff;
 }

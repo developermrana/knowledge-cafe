@@ -22,6 +22,10 @@
   padding: 8px 0;
 }
 
+.time span {
+  margin-left: 8px;
+}
+
 hr {
   margin-top: 10px;
 }

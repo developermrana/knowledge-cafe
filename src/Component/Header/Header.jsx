@@ -9,7 +9,7 @@ const Header = () => {
           <h1>Job Instruction</h1>
         </div>
         <div>
-          <img src="../../assets/images/user_2.png" alt="header img" />
+          <img src="../../assets/images/user_4.png" alt="header img" />
         </div>
       </div>
       <div>

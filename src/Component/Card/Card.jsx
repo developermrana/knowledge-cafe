@@ -1,8 +1,12 @@
 import React from "react";
 import "./Card.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
-const Card = ({ data }) => {
-  const { user, user_img, date, time, title, banner } = data;
+const Card = (props) => {
+  const { user, user_img, date, time, title, banner } = props.data;
+  const addTitle = props.cardTitle;
+  const addTime = props.addTime;
   return (
     <div className="single-card-container">
       <div>
@@ -20,11 +24,17 @@ const Card = ({ data }) => {
             </div>
           </div>
           <div className="time">
-            <p>{time} min read</p>
+            <p>
+              {time} min read
+              <span onClick={() => addTitle(props.data.title)}>
+                <FontAwesomeIcon icon={faBookmark} />
+              </span>
+            </p>
           </div>
         </div>
         <h2>{title}</h2>
       </div>
+      <button onClick={() => addTime(props.data.time)}>Make As Read</button>
       <hr />
     </div>
   );
