@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Cards.css";
 import Card from "../Card/Card";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Cards = () => {
   const [datas, setDatas] = useState([]);
@@ -38,7 +40,7 @@ const Cards = () => {
       const filterTitle = parseStor.find((title) => title === cardTitle);
 
       if (filterTitle) {
-        return alert("bari ja va");
+        return toast("This cart already added");
       } else {
         shoppingCard = [...parseStor, cardTitle];
         localStorage.setItem("cardTitle", JSON.stringify(shoppingCard));
@@ -53,6 +55,7 @@ const Cards = () => {
 
   return (
     <div className="card-container">
+      <ToastContainer></ToastContainer>
       <div className="all-card">
         {datas.map((data) => (
           <Card
