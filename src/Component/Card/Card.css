@@ -29,3 +29,18 @@
 hr {
   margin-top: 10px;
 }
+
+.single-card-container button {
+  padding: 10px;
+}
+@media screen and (max-width: 400px) {
+  .user-info {
+    display: block;
+  }
+  .user {
+    display: block;
+  }
+  .user img {
+    width: 50px;
+  }
+}
